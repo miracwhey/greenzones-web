@@ -104,6 +104,20 @@ h1 {
   margin: 0 0 40px;
 }
 
+.eyebrow { color: var(--ink2); font-size: 14px; margin: 0 0 14px; }
+.download { margin: -14px 0 36px; }
+.download p { margin: 12px 0 0; font-size: 14px; }
+.store-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 18px;
+  min-height: 52px; padding: 12px 20px; border-radius: 12px;
+  background: var(--ink); color: var(--bg); font-weight: 600; text-decoration: none;
+}
+.store-link:hover { opacity: .88; }
+.benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 28px 0; border-block: 1px solid var(--line); }
+.benefits h2 { margin: 0 0 8px; font-size: 18px; }
+.benefits p { margin: 0; color: var(--ink2); font-size: 15px; }
+.closing-download { margin-top: 38px; }
+
 h2 {
   font-size: 21px;
   letter-spacing: -.015em;
@@ -238,4 +252,90 @@ th { color: var(--ink2); font-weight: 600; }
 @media (max-width: 560px) {
   .wrap { padding: 36px 18px 72px; }
   header.top nav { gap: 14px; font-size: 14px; }
+  header.top { flex-wrap: wrap; }
+  header.top nav { width: 100%; margin: 4px 0 0; }
+  .benefits { grid-template-columns: 1fr; gap: 22px; }
+  .store-link { width: 100%; text-align: center; }
 }
+
+/* Produktauftritt, Oktober 2026. Supportseiten behalten ihre Lesebreite. */
+.landing { --bg:#f6f7f2; --ink:#172b22; --ink2:#56665d; --line:#dce2d9; --accent:#286344; }
+.landing .wrap { max-width:1080px; padding-top:32px; }
+.landing header.top { margin-bottom:54px; }
+.app-icon { border-radius:8px; flex-shrink:0; }
+.landing header nav a { color:var(--ink2); text-decoration:none; }
+.landing header nav a:hover { color:var(--ink); text-decoration:underline; }
+.hero { display:grid; grid-template-columns:1.3fr 1fr; gap:52px; align-items:center; padding:0 0 58px; }
+.hero h1 { font-size:clamp(38px,4.5vw,58px); line-height:1.05; letter-spacing:-.045em; margin-bottom:24px; }
+.eyebrow { font-size:12px; text-transform:uppercase; letter-spacing:.12em; font-weight:600; }
+.hero .lede { font-size:20px; line-height:1.5; margin:0 0 15px; }
+.hero-offline { font-size:16px; margin:0 0 28px; }
+.hero .download { margin:0 0 24px; }
+.store-link { border-radius:9px; font-size:16px; }
+.quiet-note { color:var(--ink2); font-size:13px; line-height:1.7; margin:0; }
+.product-figure { margin:0; justify-self:center; width:280px; }
+.product-screen { display:block; width:100%; height:auto; border-radius:28px; box-shadow:0 0 0 1px #172b2218, 0 14px 32px #172b2212; }
+.product-figure figcaption { color:var(--ink2); font-size:10px; text-align:center; margin-top:14px; }
+.benefits { gap:36px; padding:30px 0 36px; }
+.step { display:block; color:var(--ink2); font-size:12px; margin-bottom:10px; }
+.benefits h2 { font-size:18px; }
+.benefits p { font-size:15px; }
+.offline-feature { display:grid; grid-template-columns:250px 1fr; gap:80px; align-items:center; max-width:800px; margin:76px auto; }
+.offline-figure { margin:0; }
+.offline-feature h2 { font-size:36px; line-height:1.12; letter-spacing:-.03em; margin:0 0 22px; }
+.offline-feature p { line-height:1.65; }
+.small { font-size:14px; }
+.reading { max-width:760px; margin:0 auto; border-top:1px solid var(--line); }
+.landing .card { box-shadow:none; background:transparent; }
+.landing details { padding:19px 0; }
+.landing details summary { padding-right:22px; position:relative; }
+.landing details summary::after { position:absolute; right:0; top:0; }
+.landing .closing-download { padding-top:26px; margin-top:40px; }
+.landing footer { color:var(--ink2); }
+@media(prefers-color-scheme:dark) {
+ .landing { --bg:#101914; --ink:#e5ece3; --ink2:#a9b7ab; --line:#304135; --accent:#9cc7a7; }
+ .product-screen { box-shadow:0 0 0 1px #ffffff20,0 14px 32px #0004; }
+}
+@media(max-width:760px) {
+ .landing .wrap { padding-top:24px; }
+ .landing header.top { margin-bottom:38px; }
+ .hero { gap:24px; }
+ .hero h1 { font-size:38px; }
+ .hero .lede { font-size:17px; }
+ .product-figure { width:230px; }
+ .offline-feature { gap:36px; grid-template-columns:210px 1fr; }
+ .desktop-break { display:none; }
+}
+@media(max-width:560px) {
+ .hero { grid-template-columns:1fr; gap:34px; padding-bottom:36px; }
+ .hero h1 { font-size:42px; margin-bottom:20px; }
+ .hero .lede { font-size:18px; }
+ .hero .download { margin-bottom:18px; }
+ .hero-offline { margin-bottom:22px; }
+ .product-figure { width:260px; }
+ .benefits { gap:26px; padding:30px 0; }
+ .step { margin-bottom:4px; }
+ .offline-feature { display:flex; flex-direction:column-reverse; gap:26px; margin:44px 0; align-items:flex-start; }
+ .offline-feature h2 { font-size:32px; }
+ .offline-figure { width:230px; align-self:center; }
+ .landing .card { padding:20px; }
+}
+
+@media(min-width:380px) and (max-width:560px) {
+ .landing header.top { flex-wrap:nowrap; gap:9px; margin-bottom:28px; }
+ .landing header.top strong { font-size:15px; }
+ .landing header.top nav { width:auto; margin:0 0 0 auto; gap:10px; font-size:12px; }
+}
+
+@media(max-width:379px) {
+ .hero h1 { font-size:38px; }
+}
+
+/* Hauptnutzen -> konkrete Einordnung -> Offline -> Orte/Spots/Freunde. */
+.zones-feature { display:grid; grid-template-columns:1fr 320px; gap:72px; align-items:center; padding:50px 0; border-block:1px solid var(--line); }
+.zones-feature h2 { font-size:42px; line-height:1.1; margin:0 0 22px; letter-spacing:-.03em; }
+.zones-figure { margin:0; }
+.hero .lede { margin-bottom:28px; }
+.landing .reading { margin-top:54px; }
+@media(max-width:760px) { .zones-feature { gap:32px; grid-template-columns:1fr 260px; } }
+@media(max-width:560px) { .zones-feature { grid-template-columns:1fr; gap:28px; padding:36px 0; } .zones-feature h2 { font-size:34px; } .zones-figure { width:100%; max-width:320px; justify-self:center; } }
